@@ -10,7 +10,6 @@
       </v-col>
       <v-spacer></v-spacer>
       <v-btn rounded class="dark-red-button text-none" style="color: white; font: Open Sans; size: 26px; line-height: 28px; align: center;" size="x-large" width="150px;">Sign In</v-btn>
-      <v-img src="path/to/your/image.jpg" max-height="50" max-width="50" contain style="margin-left: 20px;"></v-img>
     </v-app-bar>
     <v-main>
       <v-container style="padding: 27px 0px; gap: 38px; margin-top: 50px;">
@@ -68,7 +67,7 @@ h1 {
   font-size: 60px;
   font-family: 'Alata';
   line-height: 95.22px;
-  margin-top: 30px; /* Adjusted */
+  margin-top: 30px; 
   margin-bottom: 0;
 }
 
@@ -82,16 +81,16 @@ p {
 
 .title-text {
   margin: 0;
-  margin-top: 30px; /* Added */
+  margin-top: 30px;
 }
 
 .description-text {
   margin: 0;
-  margin-top: 20px; /* Added */
+  margin-top: 20px;
 }
 
 .sign-in-btn {
-  margin-top: 30px; /* Added */
+  margin-top: 30px;
 }
 
 .text-none {
