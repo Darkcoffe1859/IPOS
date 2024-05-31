@@ -1,31 +1,30 @@
 <template>
   <div>
-    <v-app-bar flat style="padding: 0px 100px; height: 80px;" class="d-flex align-center">
-      <v-toolbar-title class="pet title">IPet</v-toolbar-title>
+    <v-app-bar flat style=" height: 104px; margin-top: 50px;" class="d-flex align-center">
+      <v-toolbar-title class="title">IPet</v-toolbar-title>
       <v-col cols="12" md="6" class="d-flex align-center">
-        <v-btn class="text-none" :to="{ name: 'home' }">Home</v-btn>
-        <v-btn class="text-none" :to="{ name: 'about' }">About</v-btn>
-        <v-btn class="text-none" :to="{ name: 'privacy' }">Privacy</v-btn>
-        <v-btn class="text-none" :to="{ name: 'items' }">Items</v-btn>
+        <v-btn class="text-none vbtn" :to="{ name: 'home' }">Home</v-btn>
+        <v-btn class="text-none vbtn" :to="{ name: 'about' }">About</v-btn>
+        <v-btn class="text-none vbtn" :to="{ name: 'privacy' }">Privacy</v-btn>
+        <v-btn class="text-none vbtn" :to="{ name: 'items' }">Items</v-btn>
       </v-col>
       <v-spacer></v-spacer>
-      <v-btn rounded class="dark-red-button text-none" style="color: white; margin-left: 10px;" size="large" width="130px">Sign In</v-btn>
+      <v-btn rounded class="dark-red-button text-none" style="color: white; font: Open Sans; size: 26px; line-height: 28px; align: center;" size="x-large" width="150px;">Sign In</v-btn>
       <v-img src="path/to/your/image.jpg" max-height="50" max-width="50" contain style="margin-left: 20px;"></v-img>
     </v-app-bar>
     <v-main>
-      <v-container style="padding: 27px 0px; gap: 38px;">
+      <v-container style="padding: 27px 0px; gap: 38px; margin-top: 50px;">
         <v-row>
-          <v-col cols="12" md="6">
+          <v-col cols="12" md="6" class="pa-0 ma-0">
             <div>
-              <h1>
-                <span style="color: black;">Everything pets in one place</span>
-                <br/>
-                <span style="color: red;">No Hazzle</span>
+              <h1 class="title-text">
+                <span style="color: black;">Everything pets in one<br/>place</span>
+                <span style="color: #8B0000; padding-right: 2px;"> No Hazzle</span>
               </h1>
-              <p>
+              <p class="description-text">
                 Aqui, você encontrará respostas para todas as suas dúvidas, desde a escolha da melhor ração até dicas essenciais para garantir o bem-estar do seu companheiro peludo.
               </p>
-              <v-btn rounded class="dark-red-button text-none" :to="{ name: 'signIn' }" width="200px" size="large" style="margin-top: 20px;">Sign In</v-btn>        
+              <v-btn rounded class="dark-red-button text-none sign-in-btn" :to="{ name: 'signIn' }" width="250px" size="x-large" style="font: Open Sans; size: 26px; line-height: 28px; align: center;">Sign In</v-btn>
             </div>
           </v-col>
           <v-col cols="12" md="6">
@@ -44,21 +43,55 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: 'Alata';
+  src: url('@/fonts/static/Alata-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Paytone One';
+  src: url('@/fonts/static/PaytoneOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('@/fonts/static/Manrope-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 h1 {
-  font-size: 69px;
-  font-family: Alata;
-  line-height: 1.2;
+  font-size: 60px;
+  font-family: 'Alata';
+  line-height: 95.22px;
+  margin-top: 30px; /* Adjusted */
+  margin-bottom: 0;
 }
 
 p {
-  font-size: 32px;
+  font-size: 21px;
   font-family: 'Open Sans', sans-serif;
-  line-height: 1.5;
+  line-height: 28.6px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.pet {
-  text-transform: none;
+.title-text {
+  margin: 0;
+  margin-top: 30px; /* Added */
+}
+
+.description-text {
+  margin: 0;
+  margin-top: 20px; /* Added */
+}
+
+.sign-in-btn {
+  margin-top: 30px; /* Added */
 }
 
 .text-none {
@@ -71,8 +104,17 @@ p {
 }
 
 .title {
-  font-size: 30px;
-  color: red;
+  font-size: 60px;
+  color: #8B0000;
+  text-transform: none;
+  line-height: 83.76px;
+  font-family: 'Paytone One';
 }
 
+.vbtn {
+  font-family: 'Manrope';
+  size: 20px;
+  line-height: 28px;
+}
 </style>
+
