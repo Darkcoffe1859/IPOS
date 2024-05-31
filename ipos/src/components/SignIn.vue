@@ -20,7 +20,16 @@
           <div class="text-subtitle-1">Organization Id</div>
           <v-text-field v-model="orgId" label="Company Id" append-inner-icon="mdi-email" required></v-text-field>
           <div class="text-subtitle-1">Password</div>
-          <v-text-field v-model="password" label="Password" type="password" append-inner-icon="mdi-lock" required></v-text-field>
+          <v-text-field
+      v-model="password"
+      :append-inner-icon="showPassword ? 'mdi-lock' : 'mdi-lock-off'"
+      :type="showPassword ? 'text' : 'password'"
+      hint="At least 8 characters"
+      label="Password"
+      name="password"
+      counter
+      @click:append="showPassword = !showPassword"
+    ></v-text-field>
           <div class="forgot-password">
             <a href="#">Forget Password?</a>
           </div>
@@ -28,7 +37,6 @@
         </v-form>
         <div class="sign-up-link">
           <span>Don't have an account? </span>
-          <a href="#" class="red-text">Sign Up</a>
         </div>
       </div>
     </div>
@@ -42,7 +50,8 @@ export default {
     return {
       userId: '',
       orgId: '',
-      password: ''
+      password: '',
+      showPassword: false
     };
   },
   methods: {
@@ -54,6 +63,19 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: 'Manrope';
+  src: url('@/fonts/static/Manrope-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('@/fonts/static/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .sign-in-page {
   display: flex;
   height: 100vh;
@@ -98,37 +120,49 @@ export default {
   color: white;
   text-align: left;
   z-index: 2;
-  font-family: Manrope;
+  margin-top: 50px;
 }
 
 .content h1 {
-  font-size: 3rem;
+  font-size: 45px;
   margin: 0;
+  line-height: 54px;
+  font-family: 'Good Times';
 }
 
 .content p {
-  font-size: 1.5rem;
+  font-size: 18px;
   margin: 0;
+  font-family: 'Manrope';
+  line-height: 28.8px;
 }
 
 .sign-in-form {
-  max-width: 500px;
-  width: 100%;
+  max-width: 700px;
+  width: 200%;
   padding: 20px;
+
 }
 
 .sign-in-form h1 {
-  margin-bottom: 20px;
+  font-family: 'Manrope';
+  font-size: 40px;
+  line-height: 64px;
 }
 
 .sign-in-form p {
-  margin-bottom: 10px;
+  font-family: 'Manrope';
+  font-size: 18px;
+  line-height: 28.8px;
+  margin-bottom: 20px;
 }
 
 .forgot-password {
-  margin-top: 10px;
-  margin-bottom: 25px;
-  margin-left: 322px;
+  margin-bottom: 40px;
+  font-family: 'Manrope';
+  font-size: 14px;
+  line-height: 19.12px;
+  text-align: right;
 }
 
 .forgot-password a {
@@ -142,24 +176,38 @@ export default {
   text-decoration: none;
 }
 
-.sign-up-link {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.sign-up-link a {
-  text-decoration: none;
-}
-
 .dark-red-button {
   background-color: #8B0000 !important;
   color: white !important;
-  font-size: 1.25rem; 
+  font-size: 1.25rem;
   text-transform: none;
 }
 
 .vbtn {
   size: x-large;
+  font-family: 'Montserrat';
 }
-</style>
 
+.password-text-field {
+  width: 462px;
+  height: 60px;
+  margin-top: 26px;
+  padding: 12px 0 0 0;
+  gap: 0;
+  border-radius: 6px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  font-family: 'Manrope';
+}
+
+.sign-up-link {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Manrope';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+</style>
